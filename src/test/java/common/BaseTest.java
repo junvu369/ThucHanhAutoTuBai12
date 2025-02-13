@@ -14,14 +14,15 @@ public class BaseTest {
 
     @BeforeMethod
     public void createDriver() {
+        //Chạy chế độ ẩn danh
         // Cấu hình ChromeOptions
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito");  // Mở trình duyệt ở chế độ ẩn danh
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--incognito");  // Mở trình duyệt ở chế độ ẩn danh
 
         // Khởi tạo WebDriver
-        driver = new ChromeDriver(options);
+//        driver = new ChromeDriver(options);
 
-//        driver = new ChromeDriver();
+        driver = new ChromeDriver();
 //        driver = new EdgeDriver();
         driver.manage().window().maximize();
 
