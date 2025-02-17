@@ -1,4 +1,4 @@
-package Actions_Robot_Class;
+package Bai12_Actions_Robot_Class;
 
 import common.BaseTest;
 import org.openqa.selenium.By;

@@ -1,15 +1,12 @@
-package Actions_Robot_Class;
+package Bai12_Actions_Robot_Class;
 
 import common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
-import java.util.List;
 
 public class DemoActionsClass extends BaseTest {
     @Test
