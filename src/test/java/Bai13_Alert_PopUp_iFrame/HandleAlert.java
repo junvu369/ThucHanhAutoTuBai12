@@ -72,6 +72,7 @@ public class HandleAlert extends BaseTest {
 
         //Khởi tạo class Alert
         Alert alert3 = driver.switchTo().alert();
+        System.out.println(alert3.getText());
         alert3.sendKeys("Selenium");
         alert3.accept();
 
