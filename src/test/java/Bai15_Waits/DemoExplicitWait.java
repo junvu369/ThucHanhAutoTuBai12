@@ -26,15 +26,18 @@ public class DemoExplicitWait {
 
         driver.get("https://hrm.anhtester.com/");
 
-        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("iusername")));
-        wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("ipassword")));
-
-
         driver.findElement(By.id("iusername")).sendKeys("admin_example");
+
+        wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("ipassword")));
         driver.findElement(By.id("ipassword")).sendKeys("123456");
+
+        wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
         driver.findElement(By.xpath("//button[@type='submit']")).click();
 
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Projects')]")));
         driver.findElement(By.xpath("//span[contains(text(),'Projects')]")).click();
 
         Thread.sleep(2000);
