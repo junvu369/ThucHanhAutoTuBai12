@@ -30,10 +30,10 @@ public class ThuchanhWaits_01 extends BaseTest {
         driver.findElement(By.xpath(LocatorsCRM.inputPhoneNumber)).sendKeys("0123456789");
         driver.findElement(By.xpath(LocatorsCRM.inputWebsite)).sendKeys("https://viettel.com.vn/");
 
-//        //Scroll down đến label Group
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        WebElement groupLabel = driver.findElement(By.xpath("//label[normalize-space()='Groups']"));
-//        js.executeScript("arguments[0].scrollIntoView(true);", groupLabel);
+        //Scroll down đến label Group
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement groupLabel = driver.findElement(By.xpath("//label[normalize-space()='Groups']"));
+        js.executeScript("arguments[0].scrollIntoView(true);", groupLabel);
 
         driver.findElement(By.xpath(LocatorsCRM.dropdownGroup)).click();
         Thread.sleep(1000);
