@@ -37,7 +37,7 @@ public class LocatorsCRM {
     public static String inputWebsite = "//input[@id='website']";
     public static String dropdownGroup = "//button[@data-id='groups_in[]']";
     public static String inputSearchGroup = "//button[@data-id='groups_in[]']/following-sibling::div//input";
-    public static String itemVIP = "//button[@data-id='groups_in[]']/following-sibling::div//span[normalize-space()='VIP']";
+    public static String itemVIP = "//a[@id='bs-select-1-112']";
     public static String dropdownLanguage = "//button[@data-id='default_language']";
     public static String itemVietnamese = "//span[normalize-space()='Vietnamese']";
     public static String inputAddress = "//textarea[@id='address']";
@@ -49,8 +49,6 @@ public class LocatorsCRM {
     public static String itemVietnamCountry = "//button[@data-id='country']/following-sibling::div//span[normalize-space()='Vietnam']";
     public static String buttonSave = "//div[@id='profile-save-section']//button[normalize-space()='Save']";
     public static String itemCustomerFirst = "//table[@id='clients']/tbody/tr[1]/td[3]/a";
-
-
 
     //Task page
     public static String buttonNewTask = "//a[normalize-space()='New Task']";
