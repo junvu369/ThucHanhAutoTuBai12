@@ -15,6 +15,12 @@ public class WebUI {
         this.driver = driver;
     }
 
+    //Hàm chung mở website
+    public static void openWebsite(String url) {
+        System.out.println("Open website: " + url);
+        driver.get(url);
+    }
+
     //Hàm chung cho click: wait trước khi click
     public static void clickElement(By by) {
         System.out.println("Click on element "+ by); //Ghi log bằng lệnh in
