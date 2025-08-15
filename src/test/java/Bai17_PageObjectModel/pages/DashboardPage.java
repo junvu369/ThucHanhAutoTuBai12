@@ -239,7 +239,7 @@ public class DashboardPage {
 
     public void verifyLabelInvoicesAwaitingPayment(String label){
         Assert.assertTrue(driver.findElement(labelInvoicesAwaitingPayment).isDisplayed(),"The label Invoices Awaiting Payment is not displayed.");
-        Assert.assertEquals(WebUI.getTextElement(labelInvoicesAwaitingPayment),label,"The content of label Invoices Awaiting Payment is not matched.")
+        Assert.assertEquals(WebUI.getTextElement(labelInvoicesAwaitingPayment),label,"The content of label Invoices Awaiting Payment is not matched.");
     }
     public void verifyInvoicesAwaitingPaymentTotal(String total) {
         Assert.assertTrue(driver.findElement(totalInvoicesAwaitingPayment).isDisplayed(), "The Invoices Awaiting Payment total label is not displayed.");
@@ -258,7 +258,7 @@ public class DashboardPage {
 
     public void verifyLabelProjectsInProgress(String label) {
         Assert.assertTrue(driver.findElement(labelProjectsInProgress).isDisplayed(),"The label Projects In Progresss is not displayed.");
-        Assert.assertEquals(WebUI.getTextElement(labelProjectsInProgress),label,"The content of label Projects In Progresss is not matched.")
+        Assert.assertEquals(WebUI.getTextElement(labelProjectsInProgress),label,"The content of label Projects In Progresss is not matched.");
     }
     public void verifyProjectsInProgressTotal(String total) {
         Assert.assertTrue(driver.findElement(totalProjectsInProgress).isDisplayed(), "The Projects In Progresss total is not displayed.");
