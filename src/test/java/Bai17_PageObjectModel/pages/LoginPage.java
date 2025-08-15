@@ -21,6 +21,7 @@ public class LoginPage {
     }
 
     //Khai báo các element dạng đối tượng By (phương thức tìm kiếm)
+
     private By headerLogin = By.xpath("//h1[normalize-space()='Login']");
     private By inputEmail = By.xpath("//input[@id='email']");
     private By inputPassword = By.xpath("//input[@id='password']");
@@ -28,7 +29,11 @@ public class LoginPage {
     private By errorMessage = By.xpath("//div[contains(@class,'alert-danger')]");
     private By errorMessage1 = By.xpath("(//div[contains(@class,'alert-danger')])[1]");
     private By errorMessage2 = By.xpath("(//div[contains(@class,'alert-danger')])[2]");
-
+    private By remmemberMeCheckbox = By.xpath("//input[@id='remember']");
+    private By forgotPasswordTextlink = By.xpath("//div/a[@href='https://crm.anhtester.com/admin/authentication/forgot_password']");
+    private By headerForgotPassword = By.xpath("//h1[normalize-space()='Forgot Password']");
+    private By inputemailAddress = By.xpath("//input[@id='email']");
+    private By buttonComfirm = By.xpath("//button[normalize-space()='Confirm']");
 
     //Khai báo sẵn các hàm nội bộ trang Login
 
@@ -45,6 +50,18 @@ public class LoginPage {
     public void clickLoginButton() {
 //        driver.findElement(buttonLogin).click();
         WebUI.clickElement(buttonLogin);
+    }
+
+    public void tickOnRememberMe() {
+        WebUI.clickElement(remmemberMeCheckbox);
+    }
+
+    public void clickOnForgotPassword() {
+        WebUI.clickElement(forgotPasswordTextlink);
+    }
+
+    public void clickOnConfirmButton() {
+        WebUI.clickElement(buttonComfirm);
     }
 
     public void verifyLoginSuccess() {
@@ -73,6 +90,16 @@ public class LoginPage {
         Assert.assertEquals(WebUI.getTextElement(errorMessage2), "The Email Address field is required.", "Content of error massage 2 does not match");
 
     }
+
+    public void verifyForgotPasswordSuccessfully() {
+        Assert.assertTrue(driver.getCurrentUrl().contains("forgot_password"), "Chưa đến trang Forgot Password");
+        Assert.assertTrue(driver.findElement(headerForgotPassword).isDisplayed(), "Header Forgot Password is not display");
+
+
+        Assert.assertTrue(driver.findElement(errorMessage).isDisplayed(), "Error message does not display");
+        Assert.assertEquals(WebUI.getTextElement(errorMessage), "Error setting new password", "Content of error massage does not match");
+    }
+
 
 //Thầy viết - Nâng cao với ArrrayList và vòng lặp For (áp dụng cho 1 màn có quá nhiều error message và tối đa hóa code, không bị trùng lặp)
 //
@@ -177,4 +204,11 @@ public class LoginPage {
         WebUI.clickElement(buttonLogin);
         verifyLoginSuccess();
     }
+
+    public void forgotPassword(String email) {
+        clickOnForgotPassword();
+        setEmail(email);
+        clickOnConfirmButton();
+    }
+
 }
