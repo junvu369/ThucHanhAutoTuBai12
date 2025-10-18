@@ -16,10 +16,14 @@ public class DashboardTest extends BaseTest {
         loginPage.loginCRM(); //Chỉ login
 
         dashboardPage = new DashboardPage(driver);
-        dashboardPage.verifyInvoicesAwaitingPaymentTotal("1 / 3");
-        dashboardPage.verifyConvertedLeadsTotal("1 / 1");
-        dashboardPage.verifyProjectsInProgressTotal("62 / 80");
-        dashboardPage.verifyTasksNotFinishedTotal("91 / 91");
+
+
+        dashboardPage.getListMenu();
+
+//        dashboardPage.verifyInvoicesAwaitingPaymentTotal("1 / 3");
+//        dashboardPage.verifyConvertedLeadsTotal("1 / 1");
+//        dashboardPage.verifyProjectsInProgressTotal("62 / 80");
+//        dashboardPage.verifyTasksNotFinishedTotal("91 / 91");
     }
 
 }

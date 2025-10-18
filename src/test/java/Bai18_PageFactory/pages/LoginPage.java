@@ -4,6 +4,7 @@ import com.junvu.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -51,8 +52,17 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='password']")
     private WebElement inputPassword;
 
+    //Cách 1
     @FindBy(xpath = "//button[normalize-space()='Login']")
     private WebElement buttonLogin;
+    //Cách 2
+    @FindAll({
+            @FindBy(id = "Login"),
+            @FindBy(className = "btn-primary"),
+            @FindBy(xpath = "//button[normalize-space()='Login']")
+    }
+    )
+
 
     @FindBy(xpath = "//div[contains(@class,'alert-danger')]")
     private WebElement errorMessage;

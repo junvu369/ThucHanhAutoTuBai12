@@ -3,7 +3,13 @@ package Bai18_PageFactory.pages;
 import com.junvu.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
+import java.util.List;
 
 public class DashboardPage {
 
@@ -13,9 +19,15 @@ public class DashboardPage {
     //Dùng hàm xây dựng để truyền driver từ bên ngoài vào
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
+
     //Danh sách Elements
+
+    @FindBys(@FindBy(xpath="//ul[@id='side-menu']/li[contains(@class,'menu-item')]"))
+    private List<WebElement> listElements;
+
     private By dashboardMenu = By.xpath("(//ul[@id='side-menu']/child::li)[2]");
 
     private By buttonDashboardOptions = By.xpath("//div[@class='screen-options-btn']");
@@ -118,6 +130,14 @@ public class DashboardPage {
     private By tabAnnouncements = By.xpath("//a[@href='#home_announcements']");
 
     //Khai báo các hàm xử lý
+
+    //0. Get list menu
+    public void getListMenu(){
+        System.out.println("Menu Total: " + listElements.size());
+        for (int i = 0; i<listElements.size();i++){
+            System.out.println(listElements.get(i).getText());
+        }
+    }
 
     //1. Dashboard Options
 
