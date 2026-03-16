@@ -2,10 +2,14 @@ package com.junvu.keywords;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+
+import static java.lang.Thread.currentThread;
+import static java.lang.Thread.sleep;
 
 public class WebUI {
 
@@ -23,7 +27,7 @@ public class WebUI {
 
     //Hàm chung cho click: wait trước khi click
     public static void clickElement(By by) {
-        System.out.println("Click on element "+ by); //Ghi log bằng lệnh in
+        System.out.println("Click on element " + by); //Ghi log bằng lệnh in
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(by));
 //        waitForElementToBeClickabe(by);
@@ -32,7 +36,7 @@ public class WebUI {
 
     //Hàm chung cho sendKeys: wait trước khi sendKeys
     public static void setText(By by, String text) {
-        System.out.println("Set text " + text + " on element "+ by);//Ghi log bằng lệnh in
+        System.out.println("Set text " + text + " on element " + by);//Ghi log bằng lệnh in
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         driver.findElement(by).sendKeys(text);
@@ -40,7 +44,7 @@ public class WebUI {
 
     //Hàm chung cho clearText: wait trước khi clear
     public static void clearText(By by) {
-        System.out.println("Clear text in element "+ by);//Ghi log bằng lệnh in
+        System.out.println("Clear text in element " + by);//Ghi log bằng lệnh in
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         driver.findElement(by).clear();
@@ -48,14 +52,15 @@ public class WebUI {
 
     //Hàm chung cho getText: wait trước khi getText
     public static String getTextElement(By by) {
-        System.out.println("Get text of element "+ by);//Ghi log bằng lệnh in
+        System.out.println("Get text of element " + by);//Ghi log bằng lệnh in
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 //        waitForElementVisible(by);
         String text = driver.findElement(by).getText();
-        System.out.println("==> Text: "+ text);//Ghi log bằng lệnh in
+        System.out.println("==> Text: " + text);//Ghi log bằng lệnh in
         return driver.findElement(by).getText();
     }
+
     //Kiểm tra xem element có hiển thị trên giao diện hay không
     public static void waitForElementVisible(By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -70,5 +75,22 @@ public class WebUI {
     public static void waitForElementToBeClickabe(By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
+    public static WebElement getWebElement(By by) {
+        return driver.findElement(by);
+    }
+
+    public static String getElementText(By by) {
+        waitForElementVisible(by);
+        System.out.println("Get text of element " + by);
+        String text = getWebElement(by).getText();
+        System.out.println("==> TEXT: " + text);
+        return text; //Trả về một giá trị kiểu String
+    }
+
+    public static void openURL(String url) {
+        driver.get(url);
+        System.out.println("\uD83C\uDF10 Open URL: " + url);
     }
 }

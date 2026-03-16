@@ -25,8 +25,13 @@ public class DashboardPage {
 
     //Danh sách Elements
 
+//    Cách 1: Nhìn chuyên nghiệp hơn
     @FindBys(@FindBy(xpath="//ul[@id='side-menu']/li[contains(@class,'menu-item')]"))
     private List<WebElement> listElements;
+//    Cách 2:
+//    @FindBy(xpath="//ul[@id='side-menu']/li[contains(@class,'menu-item')]"))
+//    private List<WebElement> listElements;
+
 
     private By dashboardMenu = By.xpath("(//ul[@id='side-menu']/child::li)[2]");
 

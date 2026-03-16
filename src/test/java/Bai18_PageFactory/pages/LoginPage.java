@@ -55,13 +55,13 @@ public class LoginPage {
     //Cách 1
     @FindBy(xpath = "//button[normalize-space()='Login']")
     private WebElement buttonLogin;
-    //Cách 2
-    @FindAll({
-            @FindBy(id = "Login"),
-            @FindBy(className = "btn-primary"),
-            @FindBy(xpath = "//button[normalize-space()='Login']")
-    }
-    )
+//    //Cách 2
+//    @FindAll({
+//            @FindBy(id = "Login"),
+//            @FindBy(className = "btn-primary"),
+//            @FindBy(xpath = "//button[normalize-space()='Login']")
+//    }
+//    )
 
 
     @FindBy(xpath = "//div[contains(@class,'alert-danger')]")

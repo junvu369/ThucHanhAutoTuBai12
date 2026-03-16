@@ -17,7 +17,6 @@ public class DashboardTest extends BaseTest {
 
         dashboardPage = new DashboardPage(driver);
 
-
         dashboardPage.getListMenu();
 
 //        dashboardPage.verifyInvoicesAwaitingPaymentTotal("1 / 3");
