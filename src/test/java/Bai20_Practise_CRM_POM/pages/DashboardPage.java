@@ -5,11 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class DashboardPage {
+public class DashboardPage extends BasePage {
 
     private WebDriver driver;
 
     public DashboardPage(WebDriver driver){
+        super(driver);
         this.driver = driver;
     }
 

@@ -1,13 +1,14 @@
-package common;
+package Bai20_Practise_CRM_POM.pages;
 
+import com.junvu.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 //Common Page dùng để thiết lập các element chung không thuộc về trang nào cụ thể, cùng với đó là các hàm xử lý chung được dùng ở nhiều Page
-public class CommonPage {
+public class BasePage {
     private WebDriver driver;
 
-    public CommonPage(WebDriver driver){
+    public BasePage(WebDriver driver){
         this.driver = driver;
     }
 
@@ -36,12 +37,10 @@ public class CommonPage {
     public By quickCreateSubcription = By.xpath("//a[@href='https://crm.anhtester.com/admin/subscriptions/create']");
     public By quickCreateProject = By.xpath("//a[@href='https://crm.anhtester.com/admin/projects/project']");
 
+    public CustomerPage clickMenuCustomer(){
+        WebUI.waitForElementVisible(menuCustomers);
+        WebUI.clickElement(menuCustomers);
 
-
-
-
-
-
-
-
+        return new CustomerPage(driver);
+    }
 }

@@ -1,6 +1,5 @@
 package Bai20_Practise_CRM_POM.pages;
 
-import Bai19_PageNavigation.pages.DashboardPage;
 import com.junvu.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,8 +7,11 @@ import org.openqa.selenium.WebDriver;
 import com.junvu.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,8 +49,23 @@ public class LoginPage {
         WebUI.clickElement(buttonLogin);
     }
 
+//    public void verifyLoginSuccess() {
+//        Assert.assertFalse(driver.getCurrentUrl().contains("authentication"), "FAIL. Vẫn đang ở trang Login");
+//    }
+
+// Sửa hàm verifyLoginsuccess thêm hàm wait
     public void verifyLoginSuccess() {
-        Assert.assertFalse(driver.getCurrentUrl().contains("authentication"), "FAIL. Vẫn đang ở trang Login");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.not(
+                ExpectedConditions.urlContains("authentication")
+        ));
+
+        Assert.assertFalse(
+                driver.getCurrentUrl().contains("authentication"),
+                "FAIL. Vẫn đang ở trang Login"
+        );
     }
 
     public void verifyLoginFail() {
