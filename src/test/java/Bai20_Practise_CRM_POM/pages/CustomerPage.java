@@ -1,6 +1,5 @@
 package Bai20_Practise_CRM_POM.pages;
 
-import com.beust.ah.A;
 import com.junvu.keywords.WebUI;
 import common.LocatorsCRM;
 import org.openqa.selenium.*;
@@ -89,6 +88,7 @@ public class CustomerPage extends BasePage {
         WebUI.clickElement(dropdownCountry);
         WebUI.setText(inputSearchCountry, "Vietnam");
         WebUI.clickElement(itemVietnamCountry);
+
         WebUI.clickElement(buttonSave);
     }
 

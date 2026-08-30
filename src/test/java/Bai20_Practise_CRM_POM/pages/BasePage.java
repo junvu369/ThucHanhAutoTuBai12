@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class BasePage {
     private WebDriver driver;
 
-    public BasePage(WebDriver driver){
+    public BasePage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -27,7 +27,7 @@ public class BasePage {
     public By menuKnowledgeBase = By.xpath("//span[normalize-space()='Knowledge Base']");
     public By menuUtilities = By.xpath("//span[normalize-space()='Utilities']");
     public By menuReports = By.xpath("//span[normalize-space()='Reports']");
-    public By seachBoxOnTop =By.xpath("//input[@id='search_input']");
+    public By seachBoxOnTop = By.xpath("//input[@id='search_input']");
     public By quickCreateButton = By.xpath("//li[normalize-space()='Quick Create']");
     public By quickCreateInvoice = By.xpath("//a[@href='https://crm.anhtester.com/admin/invoices/invoice']");
     public By quickCreateEstimate = By.xpath("//a[@href='https://crm.anhtester.com/admin/estimates/estimate']");
@@ -37,10 +37,17 @@ public class BasePage {
     public By quickCreateSubcription = By.xpath("//a[@href='https://crm.anhtester.com/admin/subscriptions/create']");
     public By quickCreateProject = By.xpath("//a[@href='https://crm.anhtester.com/admin/projects/project']");
 
-    public CustomerPage clickMenuCustomer(){
+    public CustomerPage clickMenuCustomer() {
         WebUI.waitForElementVisible(menuCustomers);
         WebUI.clickElement(menuCustomers);
 
         return new CustomerPage(driver);
+    }
+
+    public ProjectPage clickMenuProject() {
+        WebUI.waitForElementVisible(menuProjects);
+        WebUI.clickElement(menuProjects);
+
+        return new ProjectPage(driver);
     }
 }
