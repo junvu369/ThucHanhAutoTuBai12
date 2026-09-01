@@ -1,12 +1,9 @@
-package Bai20_Practise_CRM_POM.pages;
+package Bai20_21_Practise_CRM_POM.pages;
 
 import com.junvu.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.junvu.keywords.WebUI;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -34,6 +31,10 @@ public class LoginPage {
     private By errorMessage1 = By.xpath("(//div[contains(@class, 'alert-danger')])[1]");
     private By errorMessage2 = By.xpath("(//div[contains(@class, 'alert-danger')])[2]");
 
+    private By myProfileicon = By.xpath("//li[@class='icon header-user-profile']");
+    private By logoutButton = By.xpath("//ul[@class='dropdown-menu animated fadeIn']//li[@class='header-logout']//a[@href='#'][normalize-space()='Logout']");
+    private By logoutButtonInPopUp = By.xpath("//div[@class='popup-content']//a[@class='btn btn-danger'][normalize-space()='Logout']");
+
     public void setEmail(String email) {
         //driver.findElement(inputEmail).sendKeys(email);
         WebUI.setText(inputEmail, email);
@@ -53,7 +54,7 @@ public class LoginPage {
 //        Assert.assertFalse(driver.getCurrentUrl().contains("authentication"), "FAIL. Vẫn đang ở trang Login");
 //    }
 
-// Sửa hàm verifyLoginsuccess thêm hàm wait
+    // Sửa hàm verifyLoginsuccess thêm hàm wait
     public void verifyLoginSuccess() {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -133,6 +134,11 @@ public class LoginPage {
         return new DashboardPage(driver);
     }
 
+    public void logoutsuccessfully(){
+        WebUI.clickElement(myProfileicon);
+        WebUI.clickElement(logoutButton);
+        WebUI.clickElement(logoutButtonInPopUp);
+    }
 }
 
 

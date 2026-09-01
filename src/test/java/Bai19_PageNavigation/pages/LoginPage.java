@@ -101,6 +101,9 @@ import java.util.List;
 
         public void loginCRM(String email, String password) {
             WebUI.openURL("https://crm.anhtester.com/admin/authentication");
+//            WebUI.sleep(5);
+//            driver.navigate().refresh();
+//            WebUI.sleep(1);
             WebUI.setText(inputEmail, email);
             WebUI.setText(inputPassword, password);
             WebUI.clickElement(buttonLogin);

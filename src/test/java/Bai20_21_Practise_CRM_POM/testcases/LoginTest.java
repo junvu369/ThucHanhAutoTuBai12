@@ -1,4 +1,4 @@
-package Bai20_Practise_CRM_POM.testcases;
+package Bai20_21_Practise_CRM_POM.testcases;
 
 import Bai19_PageNavigation.pages.LoginPage;
 import common.BaseTest;

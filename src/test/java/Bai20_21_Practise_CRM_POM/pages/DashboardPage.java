@@ -1,4 +1,4 @@
-package Bai20_Practise_CRM_POM.pages;
+package Bai20_21_Practise_CRM_POM.pages;
 
 import com.junvu.keywords.WebUI;
 import org.openqa.selenium.By;

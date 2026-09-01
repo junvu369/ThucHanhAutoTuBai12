@@ -39,7 +39,6 @@ public class WebUI {
         System.out.println("Click on element " + by); //Ghi log bằng lệnh in
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(by));
-//        waitForElementToBeClickabe(by);
         driver.findElement(by).click();
     }
 
@@ -64,7 +63,6 @@ public class WebUI {
         System.out.println("Get text of element " + by);//Ghi log bằng lệnh in
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-//        waitForElementVisible(by);
         String text = driver.findElement(by).getText();
         System.out.println("==> Text: " + text);//Ghi log bằng lệnh in
         return driver.findElement(by).getText();

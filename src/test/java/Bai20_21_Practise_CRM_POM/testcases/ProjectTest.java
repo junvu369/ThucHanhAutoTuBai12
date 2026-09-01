@@ -1,8 +1,8 @@
-package Bai20_Practise_CRM_POM.testcases;
+package Bai20_21_Practise_CRM_POM.testcases;
 
-import Bai20_Practise_CRM_POM.pages.DashboardPage;
-import Bai20_Practise_CRM_POM.pages.LoginPage;
-import Bai20_Practise_CRM_POM.pages.ProjectPage;
+import Bai20_21_Practise_CRM_POM.pages.DashboardPage;
+import Bai20_21_Practise_CRM_POM.pages.LoginPage;
+import Bai20_21_Practise_CRM_POM.pages.ProjectPage;
 import common.BaseTest;
 import org.testng.annotations.Test;
 
